@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <div class="min-h-screen flex">
+
+    <!-- LEFT SIDE (IMAGE / BRAND) -->
+    <div class="hidden lg:flex w-1/2 bg-gradient-to-br from-blue-500 to-indigo-600 items-center justify-center text-white p-10">
+      <div>
+        <h1 class="text-4xl font-bold mb-4">Welcome to Akpabio Blog</h1>
+        <p class="text-lg opacity-90">
+          Share your thoughts, stories, and ideas with the world.
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE (FORM) -->
+    <div class="flex w-full lg:w-1/2 items-center justify-center p-6">
+
+      <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
+
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+          Create Account
+        </h2>
+        <p class="text-sm text-gray-500 mb-6">
+          Join the community today 🚀
+        </p>
+
+        <form id="registerForm" class="space-y-4">
+
+          <!-- Username -->
+          <input type="text" name="username" placeholder="Username" required
+            class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
+
+          <!-- First + Last Name -->
+          <div class="flex gap-4">
+            <input type="text" name="firstName" placeholder="First Name" required
+              class="w-1/2 px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
+
+            <input type="text" name="lastName" placeholder="Last Name" required
+              class="w-1/2 px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
+          </div>
+
+          <!-- Email -->
+          <input type="email" name="email" placeholder="Email Address" required
+            class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
+
+          <!-- Phone -->
+          <input type="tel" name="phoneNumber" placeholder="Phone Number" required
+            class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
+
+          <!-- Password -->
+          <input type="password" name="password" placeholder="Password" required
+            class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
+
+          <!-- Confirm Password -->
+          <input type="password" name="confirmPassword" placeholder="Confirm Password" required
+            class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
+
+          <!-- Button -->
+          <button type="submit"
+            class="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition duration-300">
+            Create Account
+          </button>
+
+        </form>
+
+        <p class="text-center text-sm text-gray-500 mt-6">
+          Already have an account?
+          <a href="login.html" class="text-blue-600 font-medium hover:underline">
+            Login
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="./js/api.js"></script>
+</body>
+</html>
