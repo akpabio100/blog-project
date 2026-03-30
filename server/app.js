@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const cron = require('node-cron');
 
 dotenv.config();
 
@@ -18,4 +19,9 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.log(err));
 
 const PORT = process.env.PORT || 5000;
+
+cron.schedule('* * * * *', () => {
+  console.log('Cron job is running every minute');
+});
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
