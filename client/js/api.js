@@ -5,7 +5,6 @@ form.addEventListener('submit', async (e) => {
   console.log("Form submitted");
   e.preventDefault();
 
-  err = "could not submit form";
 
   const data = {
     username: form.username.value,
@@ -17,9 +16,7 @@ form.addEventListener('submit', async (e) => {
   };
 
   try {
-    // const res = await axios.post("http://localhost:5000/api/auth/register", data);
     const res = await fetch("https://blog-project-092w.onrender.com/api/auth/register", {
-    // const res = await fetch("http://localhost:5000/api/auth/register", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -27,13 +24,11 @@ form.addEventListener('submit', async (e) => {
       body: JSON.stringify(data)
     });
 
-    // alert('Registration successful');
-    console.log("response:", res);
-  } catch (err) {
-    // alert(err.response.data.message || 'Error registering');
-    console.log("error:", err);
+    const result = await res.json(); // 👈 IMPORTANT
+    console.log("Backend response:", result);
 
+  } catch (err) {
+    console.log("error:", err);
   }
-  console.log("JS is connected");
 });
 
