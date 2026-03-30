@@ -18,8 +18,9 @@ form.addEventListener('submit', async (e) => {
 
   try {
     // const res = await axios.post("http://localhost:5000/api/auth/register", data);
-    const res = await fetch("http://localhost:5000/api/auth/register", {
-      method: 'POST',cd
+    const res = await fetch("https://blog-project-092w.onrender.com/api/auth/register", {
+    // const res = await fetch("http://localhost:5000/api/auth/register", {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
