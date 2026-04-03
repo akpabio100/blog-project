@@ -1,5 +1,4 @@
 const form = document.getElementById('registerForm');
-console.log("js is connected");
 
 form.addEventListener('submit', async (e) => {
   console.log("Form submitted");
@@ -16,7 +15,7 @@ form.addEventListener('submit', async (e) => {
   };
 
   try {
-    const res = await fetch("https://blog-project-092w.onrender.com/api/auth/register", {
+    const res = await fetch(REGISTER_ENDPOINTS.registerUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
