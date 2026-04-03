@@ -31,3 +31,43 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
+
+// LOGIN
+const loginForm = document.getElementById("loginForm");
+
+if (loginForm) {
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const errorBox = document.getElementById("errorBox");
+    errorBox.classList.add("hidden");
+
+    const data = {
+      identifier: loginForm.identifier.value,
+      password: loginForm.password.value
+    };
+
+    try {
+      const res = await fetch(LOGIN_ENDPOINTS.loginUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.message);
+      }
+
+      // Save token
+      localStorage.setItem("token", result.token);
+
+    } catch (err) {
+      errorBox.textContent = err.message || "Login failed";
+      errorBox.classList.remove("hidden");
+    }
+  });
+}
