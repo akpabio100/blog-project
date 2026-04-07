@@ -48,7 +48,7 @@ if (loginForm) {
     };
 
     try {
-      const res = await fetch(LOGIN_ENDPOINTS.loginUrl, {
+      const res = await fetch(REGISTER_ENDPOINTS.loginUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
