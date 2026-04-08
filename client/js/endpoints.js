@@ -4,6 +4,3 @@ const REGISTER_ENDPOINTS = {
 };
 
 
-const list = [
-
-]
