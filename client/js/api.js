@@ -15,7 +15,7 @@ form.addEventListener('submit', async (e) => {
   };
 
   try {
-    const res = await fetch(REGISTER_ENDPOINTS.registerUrl, {
+    const res = await fetch(BLOG_ENDPOINTS.registerUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ if (loginForm) {
     };
 
     try {
-      const res = await fetch(REGISTER_ENDPOINTS.loginUrl, {
+      const res = await fetch(BLOG_ENDPOINTS.loginUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
