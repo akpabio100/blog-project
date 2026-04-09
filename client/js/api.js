@@ -26,6 +26,9 @@ form.addEventListener('submit', async (e) => {
     const result = await res.json(); // 👈 IMPORTANT
     console.log("Backend response:", result);
 
+    //Redirect to login page after successful registration
+    window.location.href = "../auth/login.html";
+
   } catch (err) {
     console.log("error:", err);
   }
